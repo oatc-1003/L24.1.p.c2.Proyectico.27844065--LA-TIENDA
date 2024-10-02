@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>3. LA TIENDA </title>
+</head>
+<body>
+    <h1>La tienda</h1>
+    <section id="OUTPUTS">
+        <h2>
+            Listado de ventas
+        </h2>
+        <table id="TIENDA_TABLE">
+            <tr>
+                <th>Cedula</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Monto a pagar</th>
+            </tr>
+            <tr id="DEFAULT_ROW">
+                <td colspan="4">
+                    No hay ventas registradas
+                </td>
+            </tr>
+
+        </table>
+
+        <ul id="TIENDA_STATS_LIST">
+            <li>
+                <span>El artículo que se vendió más fue: </span><span>-</span>
+            </li>
+            <li>
+                <span>Se vendió un total de: </span><span>-</span>
+            </li>
+        </ul>
+
+            <button type="button" id="INPUTS_VIEW_BTN" >Nueva venta</button>
+    </section>
+    <section id="INPUTS">
+        <h2>
+            Nueva venta
+        </h2>
+        <form id="VENTA_FORM">
+            <input type="text" id="NOMBRE_PRODUCTO" name="NOMBRE_PRODUCTO" placeholder="producto">
+            <input type="text" id="CANTIDAD" name="CANTIDAD"  placeholder="cantidad de producto">
+            <input type="text" id="CEDULA" name="CEDULA" placeholder="cedula">
+
+            <button type="submit">comprar</button>
+        </form>
+
+    </section>
+
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
