@@ -1,6 +1,8 @@
 export default class mVenta{
-    constructor({producto, cantidadProducto, cedula}){
-        this.PRECIOS_PRODUCTOS=[10,5,20]
+    constructor({producto, cantidadProducto, cedula, precios:{productoA,productoB,productoC}}){
+        this.precioProductoA=productoA
+        this.precioProductoB=productoB
+        this.precioProductoC=productoC
         this.nombreProducto=producto
         this.cantidadProducto=cantidadProducto;
         this.cedula=cedula;
@@ -39,9 +41,9 @@ export default class mVenta{
     
     calcMontoTotal(cantidad){
         let precio;
-        if(this._nombreProducto==="A")precio=this.PRECIOS_PRODUCTOS[0]
-        if(this._nombreProducto==="B")precio=this.PRECIOS_PRODUCTOS[1]
-        if(this._nombreProducto==="C")precio=this.PRECIOS_PRODUCTOS[2]
+        if(this._nombreProducto==="A")precio=this.precioProductoA
+        if(this._nombreProducto==="B")precio=this.precioProductoB
+        if(this._nombreProducto==="C")precio=this.precioProductoC
 
 
         return precio * cantidad

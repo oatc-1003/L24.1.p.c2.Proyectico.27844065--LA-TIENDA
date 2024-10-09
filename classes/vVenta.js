@@ -1,31 +1,31 @@
 export default class vVenta{
     constructor(controlador){
-        this.$view=document.getElementById("INPUTS")
-        this.$newSaleForm=document.getElementById("VENTA_FORM")
-        this.$newSaleFormNombreProductoInput=document.getElementById("NOMBRE_PRODUCTO")
-        this.$newSaleFormCantidadInput=document.getElementById("CANTIDAD")
-        this.$newSaleFormCedulaInput=document.getElementById("CEDULA")
+        this.$vista=document.getElementById("ENTRADAS")
+        this.$ventaFormulario=document.getElementById("VENTA_FORM")
+        this.$ventaFormularioNombreProductoInput=document.getElementById("NOMBRE_PRODUCTO")
+        this.$ventaFormularioCantidadInput=document.getElementById("CANTIDAD")
+        this.$ventaFormularioCedulaInput=document.getElementById("CEDULA")
 
-        this.$newSaleForm.addEventListener("submit",(e)=>{
+        this.$ventaFormulario.addEventListener("submit",(e)=>{
             e.preventDefault()
             let nuevaVenta={
-                producto:this.$newSaleFormNombreProductoInput.value, 
-                cantidadProducto:this.$newSaleFormCantidadInput.value, 
-                cedula:this.$newSaleFormCedulaInput.value
+                producto:this.$ventaFormularioNombreProductoInput.value, 
+                cantidadProducto:this.$ventaFormularioCantidadInput.value, 
+                cedula:this.$ventaFormularioCedulaInput.value
 
             }
-            controlador.addVenta(nuevaVenta)
+            controlador.agregarVenta(nuevaVenta)
         })
 
     }
-   showNewSaleForm(){
-        this.$view.hidden=false
+    mostrarVentaFormulario(){
+        this.$vista.hidden=false
     }
-    hideNewSaleForm(){
-        this.$view.hidden=true
+    ocultarVentaFormulario(){
+        this.$vista.hidden=true
     }
-    clearNewSaleForm(){
-        this.$newSaleForm.reset()
+    limpiarVentaFormulario(){
+        this.$ventaFormulario.reset()
     }
     
 }

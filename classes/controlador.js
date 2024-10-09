@@ -7,29 +7,29 @@ import vVenta from "./vVenta.js";
 export default class Controlador{
     constructor(){
         this.vTienda=new vTienda(this)
-        this.mTienda=new mTienda()
+        this.mTienda=new mTienda({precios:{productoA:this.vTienda.$precioProductoA, productoB:this.vTienda.$precioProductoB,productoC:this.vTienda.$precioProductoC}})
         this.vVenta=new vVenta(this)
-        this.showVTienda()
+        this.mostrarVTienda()
     }   
 
-    addVenta({producto, cantidadProducto, cedula}){
-        let nuevaVenta=new mVenta({producto, cantidadProducto, cedula})
+    agregarVenta({producto, cantidadProducto, cedula}){
+        let nuevaVenta=new mVenta({producto, cantidadProducto, cedula, precios:{productoA:this.mTienda._precioProductoA, productoB:this.mTienda._precioProductoB, productoC:this.mTienda._precioProductoC }})
         this.mTienda.procesarVenta(nuevaVenta)
-        this.vTienda.appendVenta({nombreProducto:nuevaVenta._nombreProducto, cantidadProducto:nuevaVenta._cantidadProducto, cedula:nuevaVenta._cedula, montoTotal:nuevaVenta._montoTotal})
-        this.vTienda.updateTiendaStats({nombreProductoMasVendido:this.mTienda.productoMasVendido() , totalVentas:this.mTienda.totalVentas()})
-        this.vVenta.clearNewSaleForm()
-        this.showVTienda()
+        this.vTienda.insertarVenta({nombreProducto:nuevaVenta._nombreProducto, cantidadProducto:nuevaVenta._cantidadProducto, cedula:nuevaVenta._cedula, montoTotal:nuevaVenta._montoTotal})
+        this.vTienda.actualizarTiendaEstadisticas({nombreProductoMasVendido:this.mTienda.productoMasVendido() , totalVentas:this.mTienda.totalVentas()})
+        this.vVenta.limpiarVentaFormulario()
+        this.mostrarVTienda()
       
  
     }
 
-    showVVenta(){
-        this.vVenta.showNewSaleForm()
-        this.vTienda.hideTiendaTable()
+    mostrarVVenta(){
+        this.vVenta.mostrarVentaFormulario()
+        this.vTienda.ocultarTiendaTabla()
     }
-    showVTienda(){
-        this.vVenta.hideNewSaleForm()
-        this.vTienda.showTiendaTable()
+    mostrarVTienda(){
+        this.vVenta.ocultarVentaFormulario()
+        this.vTienda.mostrarTiendaTabla()
     }
 
 }

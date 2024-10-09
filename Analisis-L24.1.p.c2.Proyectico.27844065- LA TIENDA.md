@@ -22,6 +22,9 @@ DATOS DE PRUEBA
 
 - Clase: mTienda
 	- Atributos:
+		- precioProductoA
+		- precioProductoB
+		- precioProductoC
 		- cantidadProductoMasVendido
         - nombreProductoMasVendido
         - acuVentas
@@ -31,7 +34,9 @@ DATOS DE PRUEBA
 		- totalVentas
 - Clase: mVenta
 	- Atributos:
-		- PRECIOS_PRODUCTOS
+		- precioProductoA
+		- precioProductoB
+		- precioProductoC
         - nombreProducto
         - cantidadProducto
         - cedula
@@ -46,15 +51,15 @@ DATOS DE PRUEBA
 
 - Clase: vTienda
 	- Métodos:
-		- appendVenta
-		- updateTiendaStats
-		- showTiendaTable
-		- hideTiendaTable
+		- insertarVenta
+		- actualizarTiendaEstadisticas
+		- mostrarTiendaTabla
+		- ocultarTiendaTabla
 - Clase: vVenta
 	- Métodos:
-		- showNewSaleForm
-		- hideNewSaleForm
-		- clearNewSaleForm
+		- mostrarVentaFormulario
+		- ocultarVentaFormulario
+		- limpiarVentaFormulario
 
 #### Tabulación
 
@@ -66,5 +71,5 @@ DATOS DE PRUEBA
 | 111     | B        |  10      | 50         |
 #### Requerimientos
 
-- a: PRECIOS_PRODUCTOS * cantidadProducto
+- a: precioProducto * cantidadProducto
 - b: proceso universal de Mayor en general

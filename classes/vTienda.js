@@ -1,17 +1,20 @@
 export default class vTienda{
     constructor(controlador){
-        this.$view=document.getElementById("OUTPUTS")
-        this.$tiendaTable=document.getElementById("TIENDA_TABLE")
-        this.$tiendaStatsList=document.getElementById("TIENDA_STATS_LIST")
-        this.$tiendaTableDefaultRow=document.getElementById("DEFAULT_ROW")
-        this.$showVentaViewBtn=document.getElementById("INPUTS_VIEW_BTN")
-        this.$showVentaViewBtn.addEventListener("click",()=>controlador.showVVenta())
+        this.$precioProductoA=prompt("Cual es el precio del producto A?")
+        this.$precioProductoB=prompt("Cual es el precio del producto B?")
+        this.$precioProductoC=prompt("Cual es el precio del producto C?")
+        this.$vista=document.getElementById("SALIDAS")
+        this.$tiendaTabla=document.getElementById("TIENDA_TABLA")
+        this.$tiendaListaEstadisticas=document.getElementById("TIENDA_LISTA_ESTADISTICAS")
+        this.$tiendaTablaValorPorDefecto=document.getElementById("VALOR_DEFECTO")
+        this.$mostrarVentaVistaBtn=document.getElementById("VENTA_VISTA_BTN")
+        this.$mostrarVentaVistaBtn.addEventListener("click",()=>controlador.mostrarVVenta())
     }
 
-    appendVenta({nombreProducto, cantidadProducto, cedula, montoTotal}){
-        if(this.$tiendaTableDefaultRow)this.$tiendaTableDefaultRow.remove()
+    insertarVenta({nombreProducto, cantidadProducto, cedula, montoTotal}){
+        if(this.$tiendaTablaValorPorDefecto)this.$tiendaTablaValorPorDefecto.remove()
 
-        this.$tiendaTable.innerHTML+=`
+        this.$tiendaTabla.innerHTML+=`
               <tr>
                 <td>
                     ${cedula}
@@ -30,9 +33,9 @@ export default class vTienda{
         `
 
     }
-    updateTiendaStats({nombreProductoMasVendido, totalVentas}){
+    actualizarTiendaEstadisticas({nombreProductoMasVendido, totalVentas}){
 
-        this.$tiendaStatsList.innerHTML=`
+        this.$tiendaListaEstadisticas.innerHTML=`
              <li>
                 <span>El artículo que se vendió más fue: </span><span>${nombreProductoMasVendido}</span>
             </li>
@@ -43,11 +46,11 @@ export default class vTienda{
         `
     }
 
-    showTiendaTable(){
-        this.$view.hidden=false
+    mostrarTiendaTabla(){
+        this.$vista.hidden=false
     }
-    hideTiendaTable(){
-        this.$view.hidden=true
+    ocultarTiendaTabla(){
+        this.$vista.hidden=true
     }
   
 }
