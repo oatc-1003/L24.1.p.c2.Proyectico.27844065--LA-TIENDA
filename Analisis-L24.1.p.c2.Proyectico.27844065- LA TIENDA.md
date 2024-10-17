@@ -1,5 +1,4 @@
-> Repositorio: https://github.com/oatc-1003/L24.1.p.c1.tarea1.27844065-28672767-Circo.git
-
+> Repositorio: https://github.com/oatc-1003/L24.1.p.c2.Proyectico.27844065--LA-TIENDA.git
 ---
 ### Enunciado
 
